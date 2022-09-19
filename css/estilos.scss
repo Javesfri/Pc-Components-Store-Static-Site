@@ -1,0 +1,1024 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@100;300;400;500;700&display=swap');
+
+/*estilo base */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /*font-family: 'Press Start 2P', cursive;*/
+    font-family: 'Saira', sans-serif;
+    scroll-behavior: smooth;
+}
+
+$color-orange:rgb(255, 69, 0);
+$color-white:#fff;
+$color-grey:#e9ecef;
+
+
+$colores:(fondo:$color-white, navfooter:$color-orange, contenedor:$color-grey);
+
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin borde($color, $pixel) {}
+
+/*fin de estilo base */
+/*Estilo al header*/
+
+.logo {
+    position: relative;
+    transition: all 0.4s;
+    padding: 5px;
+    text-shadow: 0.1em 0.1em 0.2em rgb(56, 55, 55);
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    h1 {
+        color: black;
+        font-family: 'Play', sans-serif;
+        font-size: 30px;
+
+        span {
+            font-family: 'Play', sans-serif;
+            position: relative;
+        color: white;
+        text-align: center;
+        
+        }
+    }
+}
+
+header {
+    background-color: $color-orange;
+    border-bottom: 2px solid black;
+
+    nav {
+        .logo {
+            position: relative;
+            transition: all 0.4s;
+            padding: 5px;
+            text-shadow: 0.1em 0.1em 0.2em rgb(56, 55, 55);
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            h3 {
+                color: black;
+                font-family: 'Play', sans-serif;
+
+                span {
+                    font-family: 'Play', sans-serif;
+                }
+            }
+        }
+
+        button {
+            span {
+                color: white !important;
+            }
+        }
+
+        ul {
+            li {
+                list-style-type: none;
+
+                &:hover {
+                    /*transform: scale(1.1);*/
+                    border-top: 2px solid $color-white;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: white !important;
+                    border-radius: 4px;
+                    text-shadow: 0.1em 0.1em 0.2em black;
+
+                    &:hover {
+                        color: white;
+                    }
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dropdown-menu {
+    background-color: $color-orange;
+    border-bottom: 2px solid black;
+    width: fit-content;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+
+    a {
+        &:hover {
+            background: $color-orange;
+        }
+
+        span {
+            &:hover {
+                border-bottom: 2px solid #fff;
+            }
+        }
+
+    }
+
+}
+
+.boton-productos {
+    color: $color-orange !important;
+    border: solid $color-orange;
+    border-radius: 10px;
+    background-color: $color-white;
+    box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.2);
+    text-shadow: none;
+    display: inline-block;
+    padding: 5px;
+    margin-top: 5px;
+
+    &:hover {
+        border: solid $color-white;
+        color: $color-white !important;
+        background-color: $color-orange;
+    }
+}
+
+/*Fin de estilo al header*/
+/*Estilo al contenedor main y contenido*/
+body {
+    background-color: #eee;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.contenedor {
+    /*@include flex(column, center, center);*/
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.733);
+    padding: 20px;
+    padding-bottom: 500px;
+    width: 1200px;
+    margin: auto;
+    height: fit-content;
+    margin-top: 80px;
+
+    h2 {
+        text-shadow: 0.1em 0.1em 0.2em rgb(48, 48, 48);
+
+    }
+
+    aside {
+        @include flex(column, flex-start, flex-start);
+        height: 500px;
+        width: 30%;
+        margin: 10px !important;
+
+        img {
+            width: 250px;
+            height: 250px;
+            margin-bottom: 75px;
+        }
+
+        h2 {
+            font-family: 'Saira', sans-serif;
+            font-weight: 400;
+            text-shadow: none;
+        }
+
+        h3 {
+            margin-top: 25px;
+        }
+
+        ul {
+            list-style: none;
+
+            li {
+                a {
+                    transition: all 0.3s;
+                    text-decoration: none;
+                    font-size: 16px;
+                    color: #000;
+                    font-weight: 300;
+
+                    &:hover {
+                        color: $color-orange;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contenedorContenido {
+    @include flex(row, space-between, center);
+    position: relative;
+    flex-wrap: wrap;
+    align-content: stretch;
+    border-radius: 3px;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 100px;
+
+    article iframe {
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+
+.contenedorContenidoProductos {
+    @include flex(row, space-evenly, flex-start);
+}
+
+.contenedorUbicacion {
+    @include flex(row, center, center);
+    width: 100%;
+    height: 700px;
+    transition: all 0.3s;
+}
+
+.contenedorTituloUbicacion {
+    margin-bottom: 30px;
+    width: 100%;
+
+    h4 {
+        font-weight: 600;
+        margin-bottom: 10px;
+
+    }
+
+    hr {
+        border-top: 1px solid rgba(0, 0, 0, 0.315);
+        width: 100%;
+        margin: auto;
+    }
+
+}
+
+.rutaPagina {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.603);
+    margin: 10px;
+    margin-bottom: 30px;
+
+    a {
+        color: #000;
+
+        &:hover {
+            color: $color-orange;
+        }
+    }
+}
+
+.contenedorTextoUbicacion {
+    @include flex(column, flex-start, flex-start);
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+    background-color: $color-orange;
+
+
+}
+
+.contenedorTexto {
+    @include flex(column, flex-start, flex-start);
+    margin-bottom: 100px;
+    width: 90%;
+    height: 25%;
+
+    &:hover {
+        transition: all 0.3s;
+        padding-right: 10px;
+        border-right: 2px solid #fff;
+
+        h5 {
+            transition: all 0.3s;
+            color: #fff;
+        }
+
+    }
+
+    h5 {
+        font-weight: bold;
+    }
+
+    span {
+        a {
+            text-decoration: none;
+            color: #000;
+            transition: all 0.5s;
+
+            &:hover {
+
+                color: #fff;
+                border-bottom: 2px solid #fff;
+            }
+
+            &:after {}
+        }
+    }
+}
+
+.contenedorContactoUbicacion {
+    @include flex(column, center, center);
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.boton-especificacion {
+    display: inline-block;
+    margin-top: 2%;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: #000;
+    border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        background-color: $color-orange;
+        box-shadow: 0px 7px 15px rgba(255, 68, 0, 0.623);
+        transform: translateY(-7px);
+    }
+}
+
+.contenedorContacto {
+    @extend .contenedorTextoUbicacion;
+    background-color: #fff;
+    width: 100%;
+    height: 50%;
+
+    form {
+        @include flex(column, flex-start, center);
+        width: 100%;
+        height: 100%;
+        margin-top: 0px;
+
+        .form-row {
+            width: 100%;
+            height: 40%;
+
+            div {
+                width: 45%;
+                margin: 0px;
+            }
+
+            margin-bottom: 5px;
+        }
+
+        .form-group {
+            width: 95%;
+            height: 40%;
+
+            textarea {
+                overflow-y: scroll;
+                height: fit-content !important;
+            }
+        }
+
+        button {
+            @extend .boton-especificacion;
+            padding-left: 50px;
+            padding-right: 50px;
+            box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+        }
+
+    }
+}
+
+.contenedorUbicacionIframe {
+    @extend .contenedorTextoUbicacion;
+    background-color: #fff;
+    width: 100%;
+    height: 50%;
+
+    iframe {
+        width: 100%;
+        height: 80%;
+    }
+
+}
+
+
+.producto {
+    @include flex(column, center, center);
+    background-color: map-get($colores, fondo);
+    border-radius: 4px;
+    border: 2px solid map-get($colores, fondo);
+    padding: 10px;
+    margin: 10px;
+
+    &:hover {
+        border-color: $color-orange;
+    }
+
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+
+    h5 {
+        height: 48px;
+    }
+}
+
+.imagenBanner {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-bottom: 100px;
+    padding-top: 80px;
+}
+
+.contenedorNosotros {
+    @include flex(row, flex-direction, flex-start);
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+
+    p {
+        width: 60%;
+        height: 100%;
+        text-align: justify;
+        font-size: 18px;
+    }
+
+    img {
+        width: 40%;
+        height: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.contenedorMisionVision {
+    @include flex(column, flex-start, center);
+    width: 100%;
+    height: fit-content;
+    background-color: $color-orange;
+    padding: 20px;
+
+    div {
+        text-align: center;
+        width: 90%;
+        height: 30%;
+
+        h4 {
+            color: #fff;
+
+        }
+
+        p {
+            color: #fff;
+            font-size: 20px;
+        }
+
+    }
+
+    hr {
+        border-top: 2px solid rgba(255, 255, 255, 0.651);
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+}
+
+
+.productoOferta {
+    @extend .producto;
+    @include flex(column, space-between, flex-start);
+    position: relative;
+    border: 3px solid map-get($colores, fondo);
+    width: 22%;
+    height: 380px;
+
+    &:hover {
+        .productoPrecio {
+            color: $color-orange;
+        }
+
+    }
+
+    h5 {
+        margin: 5px;
+        height: 85px;
+    }
+
+    a {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.carousel {
+    margin: auto;
+    margin-top: 80px;
+    height: fit-content;
+}
+
+
+.carousel-imagen {
+    height: auto;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.productoOfertaImagen {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    transition: all 0.7s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.productoNombre {
+    position: relative;
+
+}
+
+.contenedorProductos {
+    @include flex(column, center, center);
+    height: fit-content;
+    margin: 10px;
+    width: 60%;
+}
+
+.productoCategoria {
+    @extend .producto;
+    @include flex(row, center, center);
+    border-radius: 4px;
+    height: 220px;
+    width: 100%;
+    padding: 10px;
+
+    img {
+        width: 200px;
+        padding: 5px;
+        height: 200px;
+    }
+
+}
+
+.productoMarca {
+    @include flex(row, space-around, center);
+    width: fit-content;
+
+    img {
+        width: 40px;
+        height: 40px;
+        margin-right: 4px;
+    }
+
+    h3 {
+        padding: 0px;
+        margin: 0px;
+    }
+
+}
+
+.productoMarca2 {
+    @extend .productoMarca;
+    margin-top: 100px;
+}
+
+.contenedorDatosProducto {
+    @include flex(column, space-between, flex-start);
+    height: 100%;
+    width: 100%;
+}
+
+
+.productoProximoImagenTabla {
+    @include flex(row, space-around, center);
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+
+.productoPrecioStock {
+    @include flex(row, space-between, center);
+    width: 100%;
+}
+
+.productoPrecio {
+    border-radius: 0px 5px 0px 0px;
+    padding: 3px;
+    background-color: $color-grey;
+    font-size: 20px;
+    color: #0d68c4;
+}
+
+.botonGrupo {
+    width: 100%;
+    @include flex(row, space-between, space-evenly);
+}
+
+.productoStock {
+    color: green
+}
+
+.productoNoStock {
+    color: red;
+}
+
+.contenedorProximo {
+    @extend .contenedorContenido;
+    @include flex(column, center, center);
+}
+
+.productoProximo {
+    @extend .producto;
+    width: 90%;
+    border-radius: 4px;
+    border: 2px solid $color-grey;
+    padding: 10px;
+    margin: 10px;
+}
+
+.productoProximoImagen {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    transition: all 0.7s;
+
+    &:hover {
+        transform: rotateY(180deg);
+    }
+}
+
+.productoProximoArribo {
+    border: 1px solid black;
+    border-radius: 0px 5px 0px 5px;
+    background-color: $color-grey;
+    padding: 3px;
+    margin-top: 10px;
+}
+
+.contenedorBeneficio {
+    @extend .contenedorContenido;
+    @include flex(row, space-around, center);
+    width: 100%;
+
+    .productoBeneficio {
+        @extend .producto;
+        @include flex(column, flex-start, center);
+        height: 220px;
+        width: 30%;
+
+        small,
+        h4 {
+            text-align: center;
+        }
+
+        .iconosBeneficio {
+            font-size: 40px;
+            color: $color-orange;
+        }
+    }
+
+
+}
+
+
+
+
+
+
+.botonVerMas {
+    @extend .boton-especificacion;
+    color: rgba(255, 68, 0, 0.671);
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 5px;
+
+    &:hover {
+        text-decoration: none;
+        background-color: $color-orange;
+        color: $color-white;
+    }
+}
+
+form {
+    @include flex(column, center, center);
+
+    input,
+    textarea {
+        padding: 5px;
+        margin: 5px;
+        border: 2px solid black;
+        border-radius: 5px;
+        width: 300px;
+    }
+}
+
+.irArriba {
+    display: inline-block;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.575);
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 2;
+    padding: 15px;
+    transition: all 0.3s;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: #eee;
+        color: $color-orange;
+    }
+}
+
+.botonContacto {
+    display: block;
+    width: 150px;
+}
+
+.contenedorMapa {
+    display: flex;
+    height: 50vh;
+}
+
+.contenedorInformacionContacto {
+    @include flex(column, flex-start, space-around);
+    width: 90%;
+}
+
+/*fin de estilo al contenedor main y contenido*/
+/*Estilo al footer*/
+footer {
+    @include flex(column, space-evenly, center);
+    background-color: map-get($colores, navfooter);
+    height: fit-content;
+    border-top: 2px solid black;
+    width: 100%;
+    small {
+        background-color: black;
+        height: fit-content;
+        width: 100%;
+        color: #c7c9cad0;
+        margin: 0px;
+        padding: 0px;
+    }
+    
+}
+.footerContenido{
+    @include flex(row, space-evenly, center);
+    text-align: center;
+    position: relative;
+    
+    height: 150px;
+    width: 100%;
+    div {
+        @include flex(column, flex-start, center);
+        height: 90%;
+
+        /*border: solid black;*/
+        h5 {
+            color: #fff;
+            text-shadow: 0.1em 0.1em 0.1em black;
+        }
+
+        a {
+            color: $color-white;
+
+            &:hover {
+                text-decoration: none;
+                color: $color-white;
+            }
+
+            text-shadow: 0.1em 0.1em 0.2em black;
+        }
+
+        iframe {
+            height: 70px !important;
+            border-radius: 3px;
+        }
+
+        div {
+            @include flex(column, space-evenly, center)
+        }
+    }
+}
+
+
+
+/*Fin de estilo al footer*/
+
+@media screen and (max-width: 1200px) {
+    .productoBeneficio {
+        height: 250px;
+    }
+
+    .contenedor {
+        width: 100%;
+
+        aside {
+            @include flex(row, flex-start, flex-start);
+            width: 768px;
+            height: fit-content;
+
+            img {
+                width: 30%;
+                height: 100%;
+            }
+
+            ul {
+                li {
+                    display: inline;
+                    padding-left: 5px;
+                }
+            }
+        }
+    }
+
+    .contenedorProductos {
+        width: 768px
+    }
+
+    .contenedorContenidoProductos {
+        @include flex(column, center, center);
+    }
+
+
+}
+
+@media screen and (max-width: 992px) {
+    .productoOferta {
+        width: 30%;
+    }
+
+    .contenedorUbicacion {
+        @include flex(column, flex-start, center);
+        width: 100%;
+        height: fit-content;
+
+        .contenedorTextoUbicacion {
+            width: 100%;
+
+            .contenedorInformacionContacto {
+                @include flex(column, center, center);
+                width: 100%;
+
+                .contenedorTexto {
+                    @include flex(column, center, center);
+                    width: 100%;
+                    height: 30%;
+
+                    &:hover {
+                        border-right: none;
+                        border-bottom: 2px solid #fff;
+
+                        h5 {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .contenedorContactoUbicacion {
+            width: 100%;
+        }
+    }
+
+    .contenedorNosotros {
+        @include flex(column, center, center);
+        width: 100%;
+        height: fit-content;
+
+        p {
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+
+        }
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor {
+        aside {
+            width: 576px;
+        }
+    }
+
+    .productoOferta {
+        width: 45%;
+        height: 450px;
+    }
+
+    .contenedorProductos {
+        width: 576px;
+    }
+
+    .productoCategoria {
+        @include flex(row, center, flex-start);
+        width: 100%;
+        height: fit-content;
+
+        img {
+            width: 25%;
+            height: auto;
+        }
+
+    }
+
+    .footerContenido{
+        padding-top: 20px;
+        height: 500px;
+        flex-direction: column;
+        border: 5px solid red;
+    }
+
+    .contenedorUbicacion {
+        @include flex(column, flex-start, center);
+        width: 100%;
+        height: fit-content;
+    }
+
+    .contenedorContactoUbicacion {
+        width: 100%;
+    }
+
+    .contenedorBeneficio {
+        @include flex(column, center, center);
+
+        .productoBeneficio {
+            @include flex(column, flex-start, center);
+            height: 220px;
+            width: 100%;
+
+            small,
+            h4 {
+                text-align: center;
+            }
+
+            .iconosBeneficio {
+                font-size: 40px;
+                color: $color-orange;
+            }
+        }
+
+
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .contenedor {
+        aside {
+            width: 100%;
+        }
+    }
+    .contenedorProductos {
+        width: 100%
+    }
+
+    .productoOferta {
+        width: 100%;
+        height: 525px;
+    }
+
+    .productoCategoria {
+        @include flex(column, center, center);
+
+        img {
+            width: 40%;
+        }
+    }
+}
